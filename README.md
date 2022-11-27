@@ -12,3 +12,4 @@ Bước 9: Xây dựng phương thức xử lý nghiệp vụ tính điểm trun
 Bước 10: Xây dựng phuong thức xử lý nghiệp vụ để xếp loại(tạo thêm thuộc tính xếp loại để lưu trữ)</br>
 Bước 11: Vào lớp xử lý chính hoặc nơi cần xử lý</br>
 Bước 12: Gọi các phương thức theo yêu cầu của bài toán</br>
+# QLCX
