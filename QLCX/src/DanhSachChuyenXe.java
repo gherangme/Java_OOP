@@ -51,6 +51,7 @@ public class DanhSachChuyenXe {
     }
 
     public float tinhTongDoanhThuNoiThanh() {
+        return this.tongDoanhThuNoiThanh = 0;
         for (ChuyenXe chuyenXe:
              this.danhSachChuyenXe) {
             if(chuyenXe instanceof ChuyenXeNoiThanh) {
@@ -61,6 +62,7 @@ public class DanhSachChuyenXe {
     }
 
     public float tinhTongDoanhThuNgoaiThanh() {
+        this.tongDoanhThuNgoaiThanh = 0;
         for (ChuyenXe chuyenXe:
                 this.danhSachChuyenXe) {
             if(chuyenXe instanceof ChuyenXeNgoaiThanh) {
