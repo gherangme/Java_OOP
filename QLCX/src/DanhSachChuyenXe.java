@@ -51,9 +51,8 @@ public class DanhSachChuyenXe {
     }
 
     public float tinhTongDoanhThuNoiThanh() {
-        return this.tongDoanhThuNoiThanh = 0;
-        for (ChuyenXe chuyenXe:
-             this.danhSachChuyenXe) {
+        this.tongDoanhThuNoiThanh = 0;
+        for(ChuyenXe chuyenXe: this.danhSachChuyenXe) {
             if(chuyenXe instanceof ChuyenXeNoiThanh) {
                 this.tongDoanhThuNoiThanh += chuyenXe.getDoanhThu();
             }
