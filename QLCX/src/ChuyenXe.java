@@ -5,6 +5,16 @@ public class ChuyenXe {
     protected String tenTaiXe;
     protected int soXe;
     protected float doanhThu = 0;
+    
+    public ChuyenXe() {
+    }
+
+    public ChuyenXe(int maSoChuyen, String tenTaiXe, int soXe, float doanhThu) {
+        this.maSoChuyen = maSoChuyen;
+        this.tenTaiXe = tenTaiXe;
+        this.soXe = soXe;
+        this.doanhThu = doanhThu;
+    }
 
     public int getMaSoChuyen() {
         return maSoChuyen;
@@ -53,17 +63,7 @@ public class ChuyenXe {
                 "\tTên tài xế: "+this.tenTaiXe+
                 "\tSố xe: "+this.soXe);
     }
-
-    public ChuyenXe() {
-    }
-
-    public ChuyenXe(int maSoChuyen, String tenTaiXe, int soXe, float doanhThu) {
-        this.maSoChuyen = maSoChuyen;
-        this.tenTaiXe = tenTaiXe;
-        this.soXe = soXe;
-        this.doanhThu = doanhThu;
-    }
-
+    
     public float tinhDoanhThu() {
         return this.doanhThu;
     }
