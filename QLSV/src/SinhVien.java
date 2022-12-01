@@ -144,13 +144,13 @@ public class SinhVien {
 
     //hàm xuất
     public void xuatSinhVien() {
-        System.out.println("Tên: "+this.tenSV+
-                "\tMã: "+this.maSV+
-                "\tToán: "+this.diemToan+
-                "\tLý: "+this.diemLy+
-                "\tHóa: "+this.diemHoa+
-                "\tDTB: "+this.diemTB+
-                "\tXL: "+this.xepLoai);
+        System.out.println("\tTên: "+this.tenSV+
+                "\n\tMã: "+this.maSV+
+                "\n\tToán: "+this.diemToan+
+                "\n\tLý: "+this.diemLy+
+                "\n\tHóa: "+this.diemHoa+
+                "\n\tĐTB: "+this.diemTB+
+                "\n\tXL: "+this.xepLoai);
         System.out.println("--------------------------------------------------------------------------");
     }
 }
