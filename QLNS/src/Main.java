@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //khai báo biến, đối tượng, danh sách
         Scanner scan = new Scanner(System.in);
         CongTy congTy = new CongTy();
         DanhSachNhanSu danhSachNhanSu = new DanhSachNhanSu();
@@ -9,6 +10,7 @@ public class Main {
         boolean flag = false;
         /*
         danh sách có 11 người gồm: 8 nhân viên, 2 trưởng phòng, 1 giám đốc
+        (nhân viên chưa có trưởng phòng)
          */
         NhanVien nhanVien1 = new NhanVien("NV001", "NGỌC HÙNG", "0763456789", 25, 100, null);
         NhanVien nhanVien2 = new NhanVien("NV002", "BẢO DUY", "0763456788", 24, 100, null);
@@ -33,12 +35,15 @@ public class Main {
         danhSachNhanSu.danhSachTruongPhong.add(truongPhong2);
         danhSachNhanSu.danhSachGiamDoc.add(giamDoc1);
 
+        //Code xử lý
         do {
+            //thông báo chức năng
             thongBao();
             System.out.println("Vui lòng chọn chức năng: ");
             int chon = Integer.parseInt(scan.nextLine());
             switch (chon) {
                 case 1:
+                    //Input/Output thông tin công ty
                     if(congTy.getTenCongTy()==null) {
                         System.out.println("Chưa có thông tin công ty");
                         congTy.nhapThongTinCongTy();
@@ -48,6 +53,7 @@ public class Main {
                     }
                     break;
                 case 2:
+                    //Phân trưởng phòng cho nhân viên
                     System.out.println("Vui lòng nhập mã trưởng phòng");
                     String maSoTruongPhong = scan.nextLine();
                     System.out.println("Vui lòng nhập mã nhân viên muốn phân bổ");
@@ -56,6 +62,7 @@ public class Main {
                     danhSachNhanSu.capNhatSoLuongNhanVienDuoiQuyen();
                     break;
                 case 3:
+                    //thêm/xóa nhân sự
                     thongBaoThemXoa();
                     int luaChon = Integer.parseInt(scan.nextLine());
                     switch (luaChon) {
@@ -146,18 +153,23 @@ public class Main {
                             System.out.println("Đã hủy");
                             break;
                     }
+                    //cập nhật lại số lượng nhân viên của trưởng phòng sau khi xóa
                     danhSachNhanSu.capNhatSoLuongNhanVienDuoiQuyen();
                     break;
                 case 4:
+                    //Output danh sách toàn công ty
                     danhSachNhanSu.xuatThongTinToanCongTy();
                     break;
                 case 5:
+                    //Output tổng lương toàn nhân sự
                     System.out.println("Tổng lương toàn công ty: "+danhSachNhanSu.tinhTongLuongToanCongTy());
                     break;
                 case 6:
+                    //Output danh sách nhân viên lương cao nhất
                     danhSachNhanSu.nhanVienLuongCaoNhat();
                     break;
                 case 7:
+                    //Output trưởng phòng có lượng nhân viên nhiều nhất
                     System.out.println("\t\t\t\t\tTRƯỞNG PHÒNG CÓ SỐ NHÂN VIÊN DƯỚI QUYỀN NHIỀU NHẤT");
                     System.out.println("--------------------------------------------------------------------------------------------------------");
                     System.out.println("STT\tMã số\tHọ và tên\tĐiện thoại\tSố ngày\tLương\tChức vụ\t\t%CP\t\tSố NV\tTrưởng phòng");
@@ -166,18 +178,23 @@ public class Main {
                     danhSachNhanSu.truongPhongCoNhanVienDuoiQuyenNhieuNhat();
                     break;
                 case 8:
+                    //Output tên theo ABC
                     danhSachNhanSu.xuatDanhSachTenTheoThuTuABC();
                     break;
                 case 9:
+                    //Output lương giảm dần
                     danhSachNhanSu.sapXepLuongGiamDan();
                     break;
                 case 10:
+                    //Giám đốc có cổ phần nhiều nhất
                     danhSachNhanSu.coPhanNhieuNhat();
                     break;
                 case 11:
+                    //Output tổng thu nhập từng giám đốc
                     danhSachNhanSu.tongThuNhapTungGiamDoc(congTy);
                     break;
                 default:
+                    //thông báo thoát
                     System.out.println("Thoát chương trình");
                     flag = true;
                     break;
@@ -185,6 +202,7 @@ public class Main {
         }while(!flag);
     }
 
+    //thông báo chức năng
     public static void thongBao() {
         System.out.println("\t\t\t\t\tQUẢN LÝ NHÂN SỰ"+
                 "\n\t\t\t1.Nhập/xuất thông tin công ty"+
@@ -201,6 +219,7 @@ public class Main {
                 "\n\t\t\tNhập số bất kì khác để thoát");
     }
 
+    //thông báo thêm xóa
     public static void thongBaoThemXoa() {
         System.out.println("\tBạn muốn:"+"\n\t\t1.Thêm nhân viên"+
                 "\n\t\t2.Xóa nhân viên"+

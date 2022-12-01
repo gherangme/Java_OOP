@@ -35,7 +35,7 @@ public class NhanVien extends NhanSu{
         if(truongPhong == null) {
             System.out.println("\t\t\t\t\tchưa có trưởng phòng");
         }else {
-            System.out.println("\t\t\t\t\t"+this.truongPhong.getHoTen());
+            System.out.println("\t\t\t\t\t"+this.truongPhong.getMaSo());
         }
     }
 }

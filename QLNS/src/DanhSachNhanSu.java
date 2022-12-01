@@ -262,6 +262,7 @@ public class DanhSachNhanSu {
 
     //Tìm trưởng phòng có số nhân viên dưới quyền nhiều nhất
     public void truongPhongCoNhanVienDuoiQuyenNhieuNhat() {
+        List<TruongPhong> danhSachTruongPhongMax = new ArrayList<TruongPhong>();
         int stt = 0;
         TruongPhong truongPhongMax = this.danhSachTruongPhong.get(0);
         for (TruongPhong truongPhong : this.danhSachTruongPhong) {
@@ -269,9 +270,16 @@ public class DanhSachNhanSu {
                 truongPhongMax = truongPhong;
             }
         }
-        stt++;
-        truongPhongMax.xuat(stt);
-        System.out.println("--------------------------------------------------------------------------------------------------------");
+        for(TruongPhong truongPhong: this.danhSachTruongPhong) {
+            if(truongPhong.getSoNhanVien()==truongPhongMax.getSoNhanVien()) {
+                danhSachTruongPhongMax.add(truongPhong);
+            }
+        }
+        for(TruongPhong truongPhong: danhSachTruongPhongMax) {
+            stt++;
+            truongPhongMax.xuat(stt);
+            System.out.println("--------------------------------------------------------------------------------------------------------");
+        }
     }
 
     //sắp xếp theo danh sách abc
@@ -388,6 +396,7 @@ public class DanhSachNhanSu {
 
     //Giám đốc có số cổ phần nhiều nhất
     public void coPhanNhieuNhat() {
+        List<GiamDoc> danhSachGiamDocMax = new ArrayList<GiamDoc>();
         int stt = 0;
         System.out.println("\t\t\t\t\t\tGIÁM ĐỐC CÓ SỐ CỔ PHẦN NHIỀU NHẤT");
         System.out.println("--------------------------------------------------------------------------------------------------------");
@@ -399,9 +408,16 @@ public class DanhSachNhanSu {
                 giamDocMax = giamDoc;
             }
         }
-        stt++;
-        giamDocMax.xuat(stt);
-        System.out.println("--------------------------------------------------------------------------------------------------------");
+        for(GiamDoc giamDoc: this.danhSachGiamDoc) {
+            if(giamDocMax.getSoCoPhan()==giamDoc.getSoCoPhan()) {
+                danhSachGiamDocMax.add(giamDoc);
+            }
+        }
+        for(GiamDoc giamDoc: danhSachGiamDocMax) {
+            stt++;
+            giamDoc.xuat(stt);
+            System.out.println("--------------------------------------------------------------------------------------------------------");
+        }
     }
 
     //Xuất tổng thu nhập từng giám đốc

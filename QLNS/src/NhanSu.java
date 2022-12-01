@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 public class NhanSu {
+    //khai báo thuộc tính
     protected String maSo = "";
     protected String hoTen = "";
     protected String soDienThoai = "";
     protected float soNgayLamViec = 0;
     protected float luongMotNgay = 0;
 
+    //hàm constructor
     public NhanSu() {
     }
 
@@ -18,6 +20,7 @@ public class NhanSu {
         this.luongMotNgay = luongMotNgay;
     }
 
+    //getter setter
     public String getMaSo() {
         return maSo;
     }
@@ -62,6 +65,7 @@ public class NhanSu {
         return this.luongMotNgay * soNgayLamViec;
     }
 
+    //hàm nhập nhân sự
     public void nhap() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vui lòng nhập mã số nhân sự:");
@@ -80,6 +84,7 @@ public class NhanSu {
         }
     }
 
+    //hàm xuất
     public void xuat(int stt) {
         System.out.print(stt+"|\t"+this.maSo+
                 "\t"+this.hoTen+
