@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class SinhVien {
+    //khai báo thuộc tính
     private String tenSV;
     private int maSV;
     private float diemToan;
@@ -9,6 +10,7 @@ public class SinhVien {
     private float diemTB = 0;
     private String xepLoai = "Chưa xếp loại";
 
+    //hàm khởi tạo
     public SinhVien() {
     }
 
@@ -22,6 +24,7 @@ public class SinhVien {
         this.xepLoai = xepLoai;
     }
 
+    //getter setter
     public String getTenSV() {
         return tenSV;
     }
@@ -78,6 +81,7 @@ public class SinhVien {
         this.xepLoai = xepLoai;
     }
 
+    //hàm xử lý nhập
     public void nhapSinhVien() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vui lòng nhập vào tên sinh viên: ");
@@ -113,12 +117,14 @@ public class SinhVien {
         System.out.println("Hoàn thành nhập");
     }
 
+    //hàm tính điểm trung bình
     public float tinhDiemTrungBinh() {
         System.out.println("Hoàn tất tính điểm trung bình");
         this.diemTB = (this.diemToan + this.diemLy + this.diemHoa)/3;
         return this.diemTB;
     }
 
+    //hàm xếp loại
     public String xepLoai() {
         System.out.println("Hoàn tất xếp loại");
         if(this.diemTB >= 9) {
@@ -136,6 +142,7 @@ public class SinhVien {
         }
     }
 
+    //hàm xuất
     public void xuatSinhVien() {
         System.out.println("Tên: "+this.tenSV+
                 "\tMã: "+this.maSV+
