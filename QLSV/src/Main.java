@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //khai báo biến
+        //khai báo biến, đối tượng
         Scanner scan = new Scanner(System.in);
         SinhVien sv = new SinhVien();
         boolean flag = false;
